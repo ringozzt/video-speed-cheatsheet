@@ -41,6 +41,25 @@ v.playbackRate = 3;  // 任意正数都行：0.5 / 2 / 7 / 16 ……
 javascript:(function(){var v=document.querySelector('video');var s=prompt('倍速（任意正数）:','3');if(v&&s){v.playbackRate=parseFloat(s);}else{alert('没找到 video 元素');}})();
 ```
 
+## 其他玩法：开源工具
+
+上面的书签脚本是**最方便**的：零安装、跨浏览器、点一下弹窗输数字就行。但如果你想要快捷键、悬浮球、按网站记忆倍速这些进阶功能，开源社区早就把轮子造好了——核心原理全都一样（调 `playbackRate`），差别只在触发方式：
+
+**通用型（全站通吃）**
+- [Video Speed Controller](https://github.com/codebicycle/videospeed) — 最出名的那个，Chrome 应用店数百万用户，MIT 开源，快捷键 `S/D/G/R` 加减速
+- [pedrosatin/video-controller](https://github.com/pedrosatin/video-controller) — MIT，悬浮控制面板，支持 iframe 内嵌视频，自带"防重置"
+- [kylestay/video-speed-controller](https://github.com/kylestay/video-speed-controller) — Manifest V3，维护活跃
+- [lohitpt252003/fast-and-curious](https://github.com/lohitpt252003/fast-and-curious) — 0.25x–4x、0.05 精度，可按网站记忆倍速
+
+**垂直型（专啃硬骨头）**
+- [stephanesgl/youtube_speed_controller](https://github.com/stephanesgl/youtube_speed_controller) — 专做 YouTube，0.25x–16x
+- [brokencommit/Video-Speed-Up-Chrome](https://github.com/brokencommit/Video-Speed-Up-Chrome) — 从 Tampermonkey 脚本起家，README 里直接给了 bookmarklet 写法
+
+**用户脚本（最轻量）**
+- [Youtube Advanced Speed Controller](https://gist.github.com/wynemo/4536bf7d7f436122f5d2009b437f43b7) — gist 三行代码，Tampermonkey 即装即用
+
+一句话总结：想理解原理看这篇秘籍，想省事装个扩展；但论"打开就能用"，还是上面的书签脚本最快。
+
 ## 选择器速查
 
 | 写法 | 含义 |
